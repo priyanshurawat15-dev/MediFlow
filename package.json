@@ -1,0 +1,33 @@
+{
+  "name": "mediflow",
+  "version": "1.0.0",
+  "description": "MediFlow - Smart Hospital & Emergency Management System",
+  "main": "backend/src/server.ts",
+  "scripts": {
+    "dev": "concurrently -k -p \"[{name}]\" -n \"BACKEND,FRONTEND\" -c \"magenta,cyan\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "tsx watch backend/src/server.ts",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "seed": "tsx backend/src/database/seed.ts",
+    "start": "tsx backend/src/server.ts"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "concurrently": "^10.0.7",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.23.1"
+  }
+}
